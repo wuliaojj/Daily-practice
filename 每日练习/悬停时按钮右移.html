@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>悬停时按钮右移</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;    /*相对于视口的高度。视口被均分为100单位的vh*/
+            background-color: #333;
+        }
+        nav ul{
+            list-style: none;
+            transform: translateX(16px);
+        }
+        nav ul li{
+            position: relative;
+            width: 8em;    /*相当与上一级有设置字体大小的n倍*/
+            height: 2em;
+            font-size: 25px;
+            color: orangered;
+            box-sizing: border-box;
+            border-left: 2px solid;
+            margin-top: 0.8em;
+        }
+        nav ul li::before,
+        nav ul li::after
+        {
+            content: '';
+            position: absolute;
+            width: inherit;
+            border-left: 2px solid;
+            z-index: -1;
+        }
+
+        nav ul li::before {
+            height: 80%;
+            top: 10%;
+            left: -8px;
+            filter: brightness(0.8);
+        }
+
+        nav ul li::after {
+            height: 60%;
+            top: 20%;
+            left: -14px;
+            filter: brightness(0.6);
+        }
+        nav ul li span{
+            position: relative;
+            top: -10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            width: inherit;
+            height: 120%;
+            background-color: #333;
+            border: 2px solid;
+            font-family: sans-serif;
+            text-transform: capitalize;
+            transform: translateX(4px);
+            transform: translateX(-16px);
+            transition: 0.3s;
+        }
+        nav li:hover span {
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><span>html</span></li>
+            <li><span>css</span></li>
+            <li><span>js</span></li>
+        </ul>
+    </nav>
+</body>
+</html>

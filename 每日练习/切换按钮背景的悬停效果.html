@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>切换按钮背景</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #333
+        }
+        nav ul{
+            list-style: none;
+        }
+        :root {
+            font-size: 10px;
+        }
+
+        nav li {
+            position: relative;
+            width: 20rem;
+            height: 7rem;
+            font-size: 20px;
+            text-align: center;
+            line-height: 7rem;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        nav li::before,nav li::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            transition: 0.3s;
+        }
+        nav li::before{
+            background: white;
+            z-index: -1;
+            box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+        }
+        nav li::after{
+            background: goldenrod;
+            z-index: -2;
+            transform: translate(1.5rem,1.5rem)
+        }
+        nav li:hover {
+            color: white;
+            transform: translate(1.5rem, 1.5rem);
+        }
+        nav li:hover::before {
+            background-color: goldenrod;
+        }
+        nav li:hover::after {
+            background-color: white;
+            transform: translate(-1.5rem, -1.5rem);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>html</li>
+        </ul>
+    </nav>
+</body>
+</html>
