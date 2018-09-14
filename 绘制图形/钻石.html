@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>钻石</title>
+    <style>
+        /* 梯形+三角形 */
+        .cut-diamond{
+            position: relative;
+            width: 50px;
+            border-bottom: 25px solid red;
+            border-right: 25px solid transparent;
+            border-left: 25px solid transparent;
+        }
+        .cut-diamond::after{
+            position: absolute;
+            top: 25px;
+            left: -25px;
+            content: '';
+            border-top: 70px solid red;
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="cut-diamond"></div>
+</body>
+</html>

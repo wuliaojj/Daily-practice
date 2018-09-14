@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 由三个正方形组成 */
+        .burst-12{
+            margin-left: 50px;
+            margin-top: 50px;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            /* transform: rotate(45deg) */
+        }
+        .burst-12::after{
+            position: absolute;
+            /* top: 100px; */
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform: rotate(30deg)
+        }
+        .burst-12:before{
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: red;
+            transform: rotate(60deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="burst-12"></div>
+</body>
+</html>
