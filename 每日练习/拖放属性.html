@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 300px;
+            border: 3px solid blue;
+            margin-bottom: 30px;
+        }
+        
+        .dot{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: #dddddd;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="dot" draggable="true">1</div>
+        <div class="dot" draggable="true">2</div>
+    </div>
+    <div class="box1"></div>
+
+    <script>
+        var temp = '';//放置被拖拽的对象
+        document.addEventListener('dragstart', function (event) {
+            // 拖拽开始
+            temp = event.target;//获取触发事件的元素
+            event.target.style.opacity = '0.2';
+        }, false)
+        document.addEventListener('drag', function (event) {
+            // 拖拽过程中持续触发，相似与mousemove
+            console.log(1);
+        }, false)
+        document.addEventListener('dragend', function (event) {
+            // 拖拽结束
+            event.target.style.opacity = '';
+        }, false)
+        document.addEventListener('dragover', function (event) {
+            //默认情况下,数据/元素不能在其他元素中被拖放，所以要防止元素的默认处理
+            if (event.target.className == 'box1') {
+                event.preventDefault();
+            }
+        }, false)
+        document.addEventListener('dragenter', function (event) {
+            // 当拖拽对象进入投放区时触发
+            if (event.target.className == 'box1') {
+                event.target.style.borderColor = 'black';
+            }
+        }, false)
+        document.addEventListener('dragleave', function (event) {
+            //元素被拖出了投放区时触发
+            if (event.target.className == 'box1') {
+                event.target.style.borderColor = '';
+            }
+        }, false)
+        document.addEventListener('drop', function (event) {
+                event.preventDefault();
+                //拖拽对象投放在投放区时触发,(释放鼠标)
+                // console.log('temp'+JSON.stringify(temp));
+                console.log(event.target);
+                //将元素添加到当前放置的区域
+                event.target.appendChild(temp);
+                event.target.style.borderColor = '';
+            }, false)
+    </script>
+</body>
+</html>

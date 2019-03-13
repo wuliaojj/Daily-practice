@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 500px;
+            background: red;
+        }
+        .son{
+            width: 300px;
+            height: 100px;
+        }
+        .son1{
+            background: #dddddd;
+            flex-grow:1;
+        }
+        .son2{
+            background: greenyellow;
+            flex-grow:2;
+        }
+        .son3{
+            background: orange;
+            flex-grow:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son son1"></div>
+        <div class="son son2"></div>
+        <div class="son son3"></div>
+    </div>
+</body>
+</html>
+
+
+<!-- flex-grow不支持负值，默认值是0，表示不占用剩余的空白间隙扩展自己的宽度。
+如果flex-grow大于0，则flex容器剩余空间的分配就会发生，具体规则如下： 所有剩余空间总量是1。 如果只有一个flex子项设置了flex-grow属性值：
+如果flex-grow值小于1，则扩展的空间就总剩余空间和这个比例的计算值。 如果flex-grow值大于1，则独享所有剩余空间。 -->
+
+<!-- 如果有多个flex设置了flex-grow属性值： 
+如果flex-grow值总和小于1，则每个子项扩展的空间就总剩余空间和当前元素设置的flex-grow比例的计算值。 
+如果flex-grow值总和大于1，则所有剩余空间被利用，分配比例就是flex-grow属性值的比例。
+例如所有的flex子项都设置flex-grow:1，则表示剩余空白间隙大家等分，如果设置的flex-grow比例是1:2:1，则中间的flex子项占据一半的空白间隙，剩下的前后两个元素等分。 -->

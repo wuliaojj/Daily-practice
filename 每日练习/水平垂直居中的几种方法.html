@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .contentbox{
+            position: relative;
+            height: 400px;
+            width: 100%;
+            background: blue;
+        }
+        .flexbox{
+            display: flex;
+            justify-content:center; 
+            align-items:center;
+            height: 400px;
+            width: 100%;
+            background: yellow;
+        }
+        .first{
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background: red;
+            top:0; 
+            right:0; 
+            bottom:0; 
+            left:0; 
+            margin:auto;
+        }
+        .second{    
+            /* 通过transform来位移 */
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background: red;
+            left:50%; 
+            top:50%;
+            transform:translateX(-50%) translateY(-50%);
+        }
+        .third{    
+            /* 通过父级来定位子元素 */
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 父级盒子没有给定宽 -->
+    <div class="contentbox">
+         <!-- 方法一 -->
+        <!-- <div class="first"></div>    -->
+        <!-- 方法二 通过transform来位移-->
+        <!-- <div class="second"></div> -->
+    </div>
+
+    <div class="flexbox">
+        <!-- 方法三 -->
+        <div class="third"></div>
+    </div>
+</body>
+</html>

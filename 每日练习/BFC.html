@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BFC</title>
+    <style>
+        .mybox2{
+            float: left;
+            height: 400px;
+            width: 400px;
+            background: rosybrown
+        }
+        .mybox{
+            display: block;
+        }
+        .one{
+            height: 100px;
+            width: 100px;
+            background: red;
+            margin: 10px;
+        }
+        .two{
+            height: 100px;
+            width: 100px;
+            background: blue;
+            margin: 10px;
+        }
+        .three{
+            height: 100px;
+            width: 100px;
+            background: yellow;
+            margin: 10px;
+        }
+        .mybox3{
+            display: inline;
+            background: teal
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mybox">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+    <div class="mybox3">4444</div>
+    <div class="mybox2"></div>
+</body>
+</html>

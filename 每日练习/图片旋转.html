@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mybox{
+            width: 50%;
+            height: 50%;
+            -webkit-perspective:600;
+            -webkit-transform-style:preserve-3d;
+            -webkit-animation-name:back-x-spin;
+            -webkit-animation-duration:7s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-timing-function:linear
+        }
+        .myimg{
+            width: 100%;
+            height: 100%;
+            -webkit-perspective:600;
+            -webkit-transform-style:preserve-3d;
+            -webkit-animation-name:back-y-spin;
+            -webkit-animation-duration:7s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-timing-function:linear
+        }
+
+        @-webkit-keyframes back-y-spin {
+        0%    { -webkit-transform:rotateY(360deg); }
+        50%   { -webkit-transform:rotateY(180deg); }
+        100%  { -webkit-transform:rotateY(0deg); }
+        }
+        @-webkit-keyframes back-x-spin {
+        0%    { -webkit-transform:rotateX(360deg); }
+        50%   { -webkit-transform:rotateX(180deg); }
+        100%  { -webkit-transform:rotateX(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="mybox">
+        <img src="./image/1.jpeg" alt="" class="myimg">
+    </div>
+    
+</body>
+</html>

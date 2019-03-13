@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .father{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 500px;
+            background: red;
+        }
+        .son{
+            width: 500px;
+            height: 100px;
+        }
+        .son1{
+            background: #dddddd;
+            flex-shrink:1;
+        }
+        .son2{
+            background: greenyellow;
+            flex-shrink:2;
+        }
+        .son3{
+            background: orange;
+            flex-shrink:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son son1"></div>
+        <div class="son son2"></div>
+        <div class="son son3"></div>
+    </div>
+</body>
+</html>
+<!-- 
+shrink是“收缩”的意思，flex-shrink主要处理当flex容器空间不足时候，单个元素的收缩比例。
+flex-shrink不支持负值，默认值是1，也就是默认所有的flex子项都会收缩。
+如果设置为0，则表示不收缩，保持原始的fit-content宽度。
+flex-shrink的内核跟flex-grow很神似，flex-grow是空间足够时候如何利用空间，flex-shrink则是空间不足时候如何收缩腾出空间。总有点CP的味道。 -->
+
+<!-- 已知flex子项不换行，且容器空间不足，不足的空间就是“完全收缩的尺寸”： 
+如果只有一个flex子项设置了flex-shrink： 
+flex-shrink值小于1，则收缩的尺寸不完全，会有一部分内容溢出flex容器。 
+flex-shrink值大于等于1，则收缩完全，正好填满flex容器。
+如果多个flex子项设置了flex-shrink： 
+flex-shrink值的总和小于1，则收缩的尺寸不完全，每个元素收缩尺寸占“完全收缩的尺寸”的比例就是设置的flex-shrink的值。 
+flex-shrink值的总和大于1，则收缩完全，每个元素收缩尺寸的比例和flex-shrink值的比例一样。下面案例演示的就是此场景。 -->
